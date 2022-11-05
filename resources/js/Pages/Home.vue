@@ -4,7 +4,7 @@ import FlightCard from "@/Components/FlightCard.vue";
 </script>
 <template>
     <div class="bg-neutral-900 min-h-screen">
-        <div class="z-0 text-white relative h-screen flex flex-col w-4x text-[8rem] leading-none uppercase">
+        <div class="z-0 text-white relative h-screen flex flex-col w-4x text-[8rem] leading-none uppercase" :style="`background: url('${clouds}');`">
             <div class="fixed top-0">
                 <h1 class="w-full">400 tons of co2</h1>
                 <h1 class="w-full text-right">2,103 gallons of fuel</h1>
