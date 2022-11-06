@@ -31,7 +31,7 @@ const total = computed(() => {
     let total = 0
 
     for (let i = 0; i < form.carTypes.length; i++) {
-
+        total += 75 * 100
     }
 
     return total
@@ -47,20 +47,20 @@ const total = computed(() => {
             </label>
             <div v-for="i in form.cars" :key="i" class="flex flex-col space-y-2 ml-8 p-2 bg-neutral-100 rounded">
                 <span>Car {{ i }}</span>
-                <select>
-                    <option>Small (Sedan)</option>
+                <select v-model="form.carTypes[i]">
+                    <option selected>Small (Sedan)</option>
                     <option>Medium (SUV)</option>
                     <option>Large (7+ Passenger)</option>
                 </select>
-                <select>
-                    <option>Gas</option>
+                <select v-model="form.carPowers[i]">
+                    <option  selected>Gas</option>
                     <option>Diesel</option>
                     <option>Hybrid</option>
                     <option>Electric</option>
                 </select>
                 <label class="flex flex-col">
                     <span>Hours driven per week</span>
-                    <input type="number"/>
+                    <input v-model="form.carHours[i]" type="number"/>
                 </label>
             </div>
             <label class="flex flex-col">
@@ -71,6 +71,7 @@ const total = computed(() => {
                 <span>How many times a week to you rideshare</span>
                 <input v-model="form.cars" max="10" type="number"/>
             </label>
+            <h1 class="big text-4xl">{{ total }}g of CO2</h1>
             <Link href="/" class="underline">Home</Link>
         </div>
     </div>
