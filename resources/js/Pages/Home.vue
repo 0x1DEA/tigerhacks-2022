@@ -1,31 +1,30 @@
 <script setup>
-import clouds from '@/../assets/matteo-fusco-m94kn8Rp61Q-unsplash.jpg'
-import FlightCard from "@/Components/FlightCard.vue";
+import clouds from '@/../assets/billy-huynh-v9bnfMCyKbg-unsplash.jpg'
+import {Link} from '@inertiajs/inertia-vue3'
+
 </script>
 <template>
-    <div class="bg-neutral-900 min-h-screen">
-        <div class="z-0 text-white relative h-screen flex flex-col w-4x text-[8rem] leading-none uppercase" :style="`background: url('${clouds}');`">
-            <div class="fixed top-0">
-                <h1 class="w-full">400 tons of co2</h1>
-                <h1 class="w-full text-right">2,103 gallons of fuel</h1>
-                <h1 class="w-full">$10,284 in jet fuel</h1>
-            </div>
-        </div>
-        <div class="flex flex-col p-8 items-center z-10 relative bg-rose-500 h-screen bg-fill bg-bottom">
-            <div class="flex flex-col gap-4 max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl w-full">
-                <FlightCard name="Elon Musk" cost="2,041" lbs="1,204" tons="8"/>
-                <FlightCard name="Taylor Swift" cost="2,041" lbs="1,204" tons="8"/>
-                <FlightCard name="Floyd Mayweather" cost="2,041" lbs="1,204" tons="8"/>
-                <FlightCard name="Drake" cost="2,041" lbs="1,204" tons="8"/>
-                <FlightCard name="Mark Wahlberg" cost="2,041" lbs="1,204" tons="8"/>
-                <FlightCard name="Kylie Jenner" cost="2,041" lbs="1,204" tons="8"/>
-                <FlightCard name="Jay-Z" cost="2,041" lbs="1,204" tons="8"/>
+    <div class="flex flex-col items-center bg-neutral-900 min-h-screen">
+        <div class="flex flex-col items-center text-center text-neutral-800 h-screen w-full flex flex-col" :style="`background: url('${clouds}'); background-position:bottom;background-size:cover;`">
+            <div class="flex flex-col max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
+                <div class="py-32">
+                    <h1 class="w-full big text-[4rem] uppercase">it shouldn't be this hard.</h1>
+                    <div class="flex justify-center font-bold text-white text-xl gap-2">
+                        <Link href="/celebrity-jets" class="rounded transition shadow hover:shadow-xl cursor-pointer bg-black bg-opacity-50 px-2 py-2">Celebrity Jets</Link>
+                        <Link href="/planner" class="rounded transition shadow hover:shadow-xl cursor-pointer bg-black bg-opacity-50 px-2 py-2">Trip Planner</Link>
+                        <Link href="/calculator" class="rounded transition shadow hover:shadow-xl cursor-pointer bg-black bg-opacity-50 px-2 py-2">Carbon Calculator</Link>
+                        <Link href="/offsets" class="rounded transition shadow hover:shadow-xl cursor-pointer bg-black bg-opacity-50 px-2 py-2">Carbon Offsets</Link>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <style>
-h1 {
+.big {
     font-family: 'Kanit', sans-serif;
+}
+.leaflet-routing-alt {
+    color:black;
 }
 </style>

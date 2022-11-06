@@ -16,6 +16,8 @@ def tweets(id):
 tweet_data = tweets(1450174360346574850)
 data = {}
 
+print(tweet_data["meta"]["result_count"])
+
 for tweet in tweet_data["data"]:
     search = re.compile(r"^(.*?)'s").search(tweet["text"])
     if (search != None):
@@ -28,7 +30,7 @@ for tweet in tweet_data["data"]:
     search = re.compile(r" (.*?) gallons").search(tweet["text"])
     if (search != None):
         data[name]["gallons"] += int(search.group(1).replace(',', ''))
-    search = re.compile(r"$(.*?) ").search(tweet["text"])
+    search = re.compile(r"\$(.*?) ").search(tweet["text"])
     if (search != None):
         data[name]["cost"] += int(search.group(1).replace(',', ''))
     search = re.compile(r" (.*?) lbs").search(tweet["text"])
